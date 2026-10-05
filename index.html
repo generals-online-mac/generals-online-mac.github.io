@@ -8,6 +8,8 @@
     <link rel="canonical" href="https://generals-online-mac.github.io/">
     <meta name="theme-color" content="#0b0f19">
     <meta name="color-scheme" content="dark">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Generals Online for macOS">
@@ -17,7 +19,45 @@
     <meta property="og:image" content="https://generals-online-mac.github.io/images/og.jpg">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="768">
+    <meta property="og:image:alt" content="Command &amp; Conquer Generals and Zero Hour — Mac Port">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C&amp;C Generals Zero Hour on Mac — a free native port">
+    <meta name="twitter:description" content="Campaign, skirmish, mods and online battles on Apple Silicon Macs. Free, fan-made, no emulator.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Generals Online for macOS",
+        "alternateName": "Command & Conquer Generals Zero Hour for Mac",
+        "description": "Free fan-made native port of Command & Conquer: Generals and Zero Hour for Apple Silicon Macs, with campaign, skirmish, mods and Generals Online multiplayer.",
+        "url": "https://generals-online-mac.github.io/",
+        "image": "https://generals-online-mac.github.io/images/og.jpg",
+        "screenshot": "https://generals-online-mac.github.io/images/shot-16.jpg",
+        "downloadUrl": "https://general-online-zh.web.app/download",
+        "installUrl": "https://general-online-zh.web.app/",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "macOS 13 or later",
+        "processorRequirements": "Apple Silicon (M1 or newer)",
+        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "okji",
+            "url": "https://github.com/OKJID"
+        },
+        "sameAs": [
+            "https://general-online-zh.web.app/",
+            "https://github.com/OKJID/GameClient",
+            "https://www.youtube.com/@okjid"
+        ]
+    }
+    </script>
 
     <style>
         :root {
@@ -336,6 +376,139 @@
             font-size: 20px;
         }
 
+        .section-lead {
+            margin: -6px 0 16px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        code {
+            padding: 1px 6px;
+            border-radius: 6px;
+            background: var(--surface-raised);
+            color: var(--text);
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 13px;
+            overflow-wrap: anywhere;
+        }
+
+        .note {
+            margin: 12px 0 0;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .card .meta {
+            margin-top: 8px;
+            font-size: 13px;
+        }
+
+        .card .meta span {
+            display: block;
+        }
+
+        .card .card-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 12px;
+            margin-top: 8px;
+            font-size: 13px;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface);
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        th {
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        td.state {
+            width: 35%;
+            font-weight: 600;
+        }
+
+        .steps code {
+            white-space: nowrap;
+        }
+
+        .state.ready {
+            color: var(--accent);
+        }
+
+        .state.pending {
+            color: var(--gold);
+        }
+
+        .faq {
+            display: grid;
+            gap: 8px;
+        }
+
+        .faq details {
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .faq summary {
+            padding: 14px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .faq details[open] summary {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq .answer {
+            padding: 12px 16px 14px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .faq .answer p {
+            margin: 0 0 8px;
+        }
+
+        .faq .answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq .answer ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .faq .answer b {
+            color: var(--text);
+        }
+
         footer {
             padding: 24px 0 32px;
             border-top: 1px solid var(--border);
@@ -432,6 +605,22 @@
         </div>
     </section>
 
+    <section id="install">
+        <div class="wrap">
+            <h2>How to install</h2>
+            <p class="section-lead">Usually 5–10 minutes. The <a href="https://general-online-zh.web.app/">full guide</a> walks through every step with pictures, and the <a href="https://youtu.be/Kxk3NJ307mY">video</a> shows the whole path from the download to the first match.</p>
+            <ol class="steps grid three">
+                <li><b>Download the launcher</b> from the <a href="https://general-online-zh.web.app/download">latest release</a> and unzip it.</li>
+                <li><b>Open Terminal</b> and type <code>sudo xattr -cr&nbsp;</code> with a space at the end. Do not press Enter yet.</li>
+                <li><b>Drag Generals Online.app</b> into the Terminal window, press Enter and type your Mac password. The typing stays invisible — that is normal.</li>
+                <li><b>Open the launcher</b> and get the game data: sign in on the <b>Steam</b> tab, or point the <b>Local Archive</b> tab at a copy you already have.</li>
+                <li><b>Let it patch.</b> The launcher installs the community patch by itself — GenPatcher is not needed.</li>
+                <li><b>Press LAUNCH</b> and play. Mods install from the <b>MODS</b> section in the same window.</li>
+            </ol>
+            <p class="note">Why the Terminal step: the port is a volunteer project without a paid Apple certificate, so macOS blocks the first launch of a downloaded app. The command only removes that block from this one app.</p>
+        </div>
+    </section>
+
     <section>
         <div class="wrap">
             <h2>Screenshots</h2>
@@ -464,6 +653,109 @@
         </div>
     </section>
 
+    <section id="mods">
+        <div class="wrap">
+            <h2>Mods you can install from the launcher</h2>
+            <p class="section-lead">Each mod installs, updates and uninstalls with one button and stays separate from the main game. Mods run on Zero Hour; everyone in an online match needs the same mod of the same version. The launcher always shows the current list.</p>
+            <div class="grid three">
+                <div class="card">
+                    <h3>Contra</h3>
+                    <p>A large Zero Hour overhaul: reworked factions and generals, new units, effects and music. Versions 007, 008, 009 and X, plus X Brutal — three generals replaced by their faction's Boss, with unlimited superweapons, for fun rather than balance.</p>
+                    <div class="meta"><span>By Contra Mod Team</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/contra">ModDB</a><a href="https://www.paypal.com/paypalme/Contramod">Support the authors</a></div>
+                </div>
+                <div class="card">
+                    <h3>Rise of the Reds</h3>
+                    <p>Adds the Russian Federation and the European Continental Alliance alongside reworked USA, China and GLA.</p>
+                    <div class="meta"><span>Version 1.86 · by SWR Productions</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/rise-of-the-reds">ModDB</a></div>
+                </div>
+                <div class="card">
+                    <h3>ShockWave</h3>
+                    <p>Expands Zero Hour's generals with new units and abilities and adds new generals.</p>
+                    <div class="meta"><span>Version 1.201, Hotfix v6 · by SWR Productions</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/cc-shockwave">ModDB</a></div>
+                </div>
+                <div class="card">
+                    <h3>NProject</h3>
+                    <p>Zero Hour polished: bug fixes, balance for all 12 generals, a smarter AI and a playable Boss General.</p>
+                    <div class="meta"><span>Version 2.11 · by Enlima29 (n5p29), No Life Studios</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/nproject-mod">ModDB</a><a href="https://ko-fi.com/nolifestudios">Support the authors</a></div>
+                </div>
+                <div class="card">
+                    <h3>The End of Days</h3>
+                    <p>Adds Russia as a new faction and reworks USA, China and GLA; instead of picking a general, subfactions are bought during the match.</p>
+                    <div class="meta"><span>Version 11 · by The End of Days Team</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/the-end-of-days">ModDB</a></div>
+                </div>
+                <div class="card">
+                    <h3>Operation Firestorm</h3>
+                    <p>Eight generals with extended arsenals on top of Zero Hour's factions and gameplay.</p>
+                    <div class="meta"><span>Beta 02, Patch 0.2.1 · by pWn3d, Stalker, No Life Studios</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/operation-firestorm">ModDB</a></div>
+                </div>
+                <div class="card">
+                    <h3>Zero Hour Enhanced</h3>
+                    <p>Zero Hour reworked toward modern warfare: infantry classes with prone and suppression, war doctrines, three tech tiers and strategic points, with new terrain, water, effects and an HD interface.</p>
+                    <div class="meta"><span>Version 1.0.0a, Patch of 28 Mar 2024 · by VectorIV</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/cc-generals-zero-hour-enhanced">ModDB</a></div>
+                </div>
+                <div class="card">
+                    <h3>World War 3 (Peace Mission Mod)</h3>
+                    <p>A modern World War 3 built on Peace Mission: 14 factions including USA, NATO, Russia, Ukraine, China, Japan, both Koreas, Taiwan, Iran, Israel, Turkiye and the Arab League.</p>
+                    <div class="meta"><span>May 2024 · by nappyhairdo; Peace Mission by Lee Shin Fox</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/world-war-3-peace-mission-mod">ModDB</a></div>
+                </div>
+                <div class="card">
+                    <h3>Blitzkrieg II: The Finest Hour</h3>
+                    <p>A World War II total conversion from 1939 to 1945: Allies, Axis and Soviets with the major units of the European theatre and three campaigns.</p>
+                    <div class="meta"><span>R3, Patch 3.01 · by Derelict Studios</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/the-finest-hour">ModDB</a></div>
+                </div>
+                <div class="card">
+                    <h3>Silent Death</h3>
+                    <p>Real-world armies instead of the three factions: about 25 nations with their own vehicles and aircraft.</p>
+                    <div class="meta"><span>Version 25 · by Silent Death Mod Makers</span></div>
+                    <div class="card-links"><a href="https://www.facebook.com/SilentDeathMod/">Facebook</a></div>
+                </div>
+                <div class="card">
+                    <h3>Old Boss R3</h3>
+                    <p>Three Boss factions, each merging its side's Zero Hour generals, plus Capture the Flag and Art of Defense modes.</p>
+                    <div class="meta"><span>R3 · by MaD-X Game and Mod Design (MaDDoX)</span></div>
+                    <div class="card-links"><a href="https://www.moddb.com/mods/boss-generals1">ModDB</a></div>
+                </div>
+                <div class="card">
+                    <h3>Apocalptic</h3>
+                    <p>Adds four new generals and powerful end-game units to Zero Hour.</p>
+                    <div class="meta"><span>Author unknown</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="status">
+        <div class="wrap">
+            <h2>What works today</h2>
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Feature</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Zero Hour and classic Generals: campaign, skirmish against bots, saved games</td><td class="state ready">Working</td></tr>
+                        <tr><td>Online battles on Generals Online, Mac with Mac</td><td class="state ready">Working</td></tr>
+                        <tr><td>Online battles, Mac with Windows</td><td class="state pending">In review — <a href="https://github.com/TheSuperHackers/GeneralsGameCode/pull/2670">#2670</a></td></tr>
+                        <tr><td>Mods installed from the launcher</td><td class="state ready">Working</td></tr>
+                        <tr><td>Game files downloaded through Steam, no Windows PC needed</td><td class="state ready">Working</td></tr>
+                        <tr><td>Graphics through Metal, sound through native macOS audio</td><td class="state ready">Working</td></tr>
+                        <tr><td>Replays recorded on a Mac</td><td class="state ready">Working</td></tr>
+                        <tr><td>Replays recorded on Windows</td><td class="state pending">Waits for the Mac-with-Windows fix</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <section>
         <div class="wrap grid two">
             <div class="panel warning">
@@ -477,6 +769,106 @@
                 <p>The first month went into getting the game to draw anything at all through Metal. Then came the menus, the sound, the launcher and online play — and one complete restart from scratch along the way, once I understood which road actually leads online.</p>
                 <p>The biggest surprise came last: Macs and Windows PCs do math very slightly differently, and in a strategy game that is enough to split one battle into two. Fixing that grew into a project of its own, now shared with the whole Generals community, so that one day everyone can play together.</p>
                 <p class="signature">— okji, author of the Mac port</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="wrap">
+            <h2>Questions players ask</h2>
+            <div class="faq">
+                <details>
+                    <summary>Is it really free?</summary>
+                    <div class="answer">
+                        <p>Yes. The port costs nothing and its source code is public. What you need is your own copy of the game data — for example <a href="https://store.steampowered.com/bundle/39394">Command &amp; Conquer: Generals — Zero Hour on Steam</a>.</p>
+                        <p>Donations are voluntary and go toward an official Apple certificate, which would remove the Terminal step from the install.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Is the game inside the download?</summary>
+                    <div class="answer">
+                        <p>No. <b>Generals Online.app</b> is only the client — the macOS replacement for the Windows <code>.exe</code>. It carries no art, sounds, videos or maps. The game data comes from your own copy.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>The Steam page says "Windows only". Is buying it pointless on a Mac?</summary>
+                    <div class="answer">
+                        <p>No. You are buying the game data. The Windows executable is exactly the part this port replaces with a native macOS build.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>I have no Windows PC. How do I get the files onto my Mac?</summary>
+                    <div class="answer">
+                        <p>You don't need one. Buy the game on Steam and use the <b>Steam</b> tab: the launcher signs in with your account and pulls the original files straight from Valve's servers into <code>~/Documents/Generals Online/</code>.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>I have an old disc copy from 2005. Will it work?</summary>
+                    <div class="answer">
+                        <p>Yes — any copy you legally own works: an old install on a Windows PC, the original CD/DVD, a backup on a flash drive. Point the <b>Local Archive</b> tab at the folder that holds both <code>Command and Conquer Generals</code> and <code>Command and Conquer Generals Zero Hour</code>.</p>
+                        <p>The launcher installs the community patch itself and removes the conflicting EA patch files, so GenPatcher is not needed. Patching rewrites files inside that folder — keep a spare copy if it is your only one.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Which Macs does it run on?</summary>
+                    <div class="answer">
+                        <p>Macs with Apple chips — M1 or newer, including every MacBook Air, MacBook Pro, iMac, Mac mini and Mac Studio built on them — with macOS 13 Ventura or later. Intel Macs are not supported.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Is this Wine, CrossOver, Parallels or an emulator?</summary>
+                    <div class="answer">
+                        <p>None of them. The game engine itself is rebuilt for Apple chips: graphics go straight to Metal, sound to native macOS audio, windows to native macOS windows. Nothing translates Windows code at runtime, which is why the app weighs only about 12&nbsp;MB.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Why does the install need a Terminal command?</summary>
+                    <div class="answer">
+                        <p>The port is made by a volunteer without a paid Apple developer certificate, so macOS blocks the first launch of the downloaded app. <code>sudo xattr -cr</code> removes that block from this one app and changes nothing else on your Mac.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>How do I play online with other Mac players?</summary>
+                    <div class="answer">
+                        <ul>
+                            <li>Start the game from the launcher, choose <b>Online</b> and sign in when the game asks.</li>
+                            <li>The lobby list shows games hosted on a Mac by default; a game you host gets the <code>[MAC]</code> tag on its own.</li>
+                            <li>Everyone in the match must run the same mod of the same version.</li>
+                            <li>Mac players are not many at any given moment, so agree on a match in the <a href="https://t.me/GeneralsOnlineMacOS">Telegram chat</a> or on <a href="https://discord.gg/Mm3yjnv6V">Discord</a>.</li>
+                        </ul>
+                    </div>
+                </details>
+                <details>
+                    <summary>Can I play against friends on Windows?</summary>
+                    <div class="answer">
+                        <p><b>Not yet.</b> Both of you reach the same online service — you with this port, your friend with Windows Generals Online from <a href="https://www.playgenerals.online/">playgenerals.online</a> — but a Mac and a Windows PC cannot share one match yet.</p>
+                        <p>The fix makes every math operation of the game give identical results on both systems: about 1,500 expressions across the game. In test builds Mac and Windows already play for hours together. It is now in review by the Windows community: <a href="https://github.com/TheSuperHackers/GeneralsGameCode/pull/2670">pull request #2670</a>. There is no date — it depends on the review.</p>
+                        <p>Once it lands, Mac players get matches with Windows, ranked games, the ladder and tournaments.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>How is it different from GeneralsX?</summary>
+                    <div class="answer">
+                        <p><a href="https://github.com/fbraz3/GeneralsX">GeneralsX</a> is a separate project with a different goal: one build for Linux, macOS and Windows, drawing through DXVK and MoltenVK and playing on its own server. This port is made for Macs only, writes straight to Metal, and plays on the official Generals Online servers together with the main community.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Where are my saves, maps and replays?</summary>
+                    <div class="answer">
+                        <ul>
+                            <li>Zero Hour: <code>~/Command and Conquer Generals Zero Hour Data/</code></li>
+                            <li>Classic Generals: <code>~/Command and Conquer Generals Data/</code></li>
+                            <li>Custom maps and replays: the <code>Maps/</code> and <code>Replays/</code> folders inside the Zero Hour one</li>
+                            <li>Installed mods: <code>Mods/</code> inside the game folder</li>
+                        </ul>
+                    </div>
+                </details>
+                <details>
+                    <summary>Can you just send me the game files?</summary>
+                    <div class="answer">
+                        <p>No. EA released the source code of the engine — that may be built and shared, and that is what the port is. The game data was never released, so passing it around would be piracy. We don't do that and we don't link to it.</p>
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -500,6 +892,7 @@
     <div class="wrap">
         <p>Generals Online for macOS is an independent, fan-made port. Online play runs on the Generals Online service by the Generals Online Development Team; the game code builds on TheSuperHackers community project.</p>
         <p>This project is not created by, endorsed by, or affiliated with Electronic Arts. Command &amp; Conquer is a trademark of Electronic Arts. You need your own copy of the game.</p>
+        <p>The source code is available under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0 license</a> at <a href="https://github.com/OKJID/GameClient">github.com/OKJID/GameClient</a>.</p>
     </div>
 </footer>
 
