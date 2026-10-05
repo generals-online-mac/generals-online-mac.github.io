@@ -31,7 +31,7 @@
             --accent-hover: #34d399;
             --accent-ink: #04130d;
             --gold: #f5c451;
-            --radius: 14px;
+            --radius: 12px;
             --font: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -39,17 +39,13 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             margin: 0;
             background: var(--bg);
             color: var(--text);
             font-family: var(--font);
-            font-size: 17px;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.55;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -77,7 +73,7 @@
         }
 
         section {
-            padding: 72px 0;
+            padding: 36px 0;
             border-top: 1px solid var(--border);
         }
 
@@ -87,18 +83,12 @@
         }
 
         h2 {
-            font-size: clamp(26px, 4vw, 34px);
-            margin-bottom: 12px;
-        }
-
-        .lead {
-            color: var(--text-muted);
-            max-width: 680px;
-            margin: 0 0 36px;
+            font-size: clamp(22px, 3vw, 26px);
+            margin-bottom: 16px;
         }
 
         .hero {
-            padding: 64px 0 72px;
+            padding: 36px 0 40px;
             background:
                 radial-gradient(1100px 520px at 85% -10%, rgba(16, 185, 129, 0.16), transparent 60%),
                 radial-gradient(800px 420px at -10% 10%, rgba(245, 196, 81, 0.08), transparent 60%);
@@ -107,32 +97,31 @@
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 28px;
             align-items: center;
         }
 
         .eyebrow {
-            display: inline-flex;
+            display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
+            gap: 6px;
+            margin-bottom: 14px;
         }
 
         .chip {
-            padding: 4px 12px;
+            padding: 3px 10px;
             border: 1px solid var(--border);
             border-radius: 999px;
             background: var(--surface);
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            letter-spacing: 0.02em;
         }
 
         .hero h1 {
-            font-size: clamp(32px, 4.4vw, 46px);
+            font-size: clamp(28px, 3.8vw, 40px);
             letter-spacing: -0.02em;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
         }
 
         .hero h1 span {
@@ -141,28 +130,26 @@
 
         .hero p {
             color: var(--text-muted);
-            font-size: 19px;
-            max-width: 560px;
-            margin: 0 0 28px;
+            font-size: 17px;
+            margin: 0 0 20px;
         }
 
         .actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
         }
 
         .button {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 13px 22px;
+            padding: 11px 18px;
             border-radius: 10px;
             border: 1px solid var(--border);
             background: var(--surface-raised);
             color: var(--text);
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .button:hover {
@@ -184,52 +171,49 @@
         }
 
         .version {
-            margin-top: 18px;
+            margin-top: 12px;
             color: var(--text-muted);
-            font-size: 14px;
-            min-height: 22px;
+            font-size: 13px;
+            min-height: 20px;
         }
 
         .shot {
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .cards {
+        .grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 16px;
+            gap: 12px;
         }
 
         .card {
-            padding: 24px;
+            padding: 16px 18px;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             background: var(--surface);
         }
 
         .card h3 {
-            font-size: 19px;
-            margin-bottom: 8px;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .card h3 .icon {
+            margin-right: 6px;
         }
 
         .card p {
             margin: 0;
             color: var(--text-muted);
-            font-size: 16px;
-        }
-
-        .card .icon {
-            font-size: 26px;
-            margin-bottom: 12px;
+            font-size: 14px;
         }
 
         .steps {
             counter-reset: step;
-            display: grid;
-            gap: 16px;
             margin: 0;
             padding: 0;
             list-style: none;
@@ -238,24 +222,26 @@
         .steps li {
             counter-increment: step;
             position: relative;
-            padding: 20px 20px 20px 72px;
+            padding: 14px 16px 14px 56px;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             background: var(--surface);
             color: var(--text-muted);
+            font-size: 14px;
         }
 
         .steps li::before {
             content: counter(step);
             position: absolute;
-            left: 20px;
-            top: 18px;
-            width: 36px;
-            height: 36px;
+            left: 16px;
+            top: 14px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             background: rgba(16, 185, 129, 0.15);
             color: var(--accent);
             font-weight: 700;
+            font-size: 14px;
             display: grid;
             place-items: center;
         }
@@ -264,19 +250,13 @@
             color: var(--text);
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-
         .gallery figure {
             margin: 0;
         }
 
         .gallery a {
             display: block;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             border: 1px solid var(--border);
         }
@@ -290,61 +270,54 @@
         }
 
         .gallery figcaption {
-            margin-top: 8px;
+            margin-top: 6px;
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        .notice {
-            padding: 28px;
+        .panel {
+            padding: 20px;
             border-radius: var(--radius);
-            border: 1px solid rgba(245, 196, 81, 0.35);
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .panel.warning {
+            border-color: rgba(245, 196, 81, 0.35);
             background: rgba(245, 196, 81, 0.06);
         }
 
-        .notice h2 {
-            font-size: 26px;
+        .panel h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
         }
 
-        .notice p {
+        .panel p {
             color: var(--text-muted);
-            margin: 0 0 14px;
+            font-size: 14px;
+            margin: 0 0 10px;
         }
 
-        .notice p:last-child {
+        .panel p:last-child {
             margin-bottom: 0;
         }
 
-        .story {
-            max-width: 720px;
-        }
-
-        .story p {
-            color: var(--text-muted);
-            margin: 0 0 18px;
-        }
-
-        .story .signature {
+        .panel .signature {
             color: var(--text);
             font-weight: 600;
-        }
-
-        .links {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
         }
 
         .links a {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 18px 20px;
-            border-radius: 12px;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 10px;
             border: 1px solid var(--border);
             background: var(--surface);
             color: var(--text);
             font-weight: 600;
+            font-size: 15px;
         }
 
         .links a:hover {
@@ -356,53 +329,37 @@
             display: block;
             color: var(--text-muted);
             font-weight: 400;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .links .icon {
-            font-size: 24px;
+            font-size: 20px;
         }
 
         footer {
-            padding: 40px 0 56px;
+            padding: 24px 0 32px;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
         }
 
         footer p {
-            margin: 0 0 8px;
+            margin: 0 0 6px;
         }
 
         @media (min-width: 720px) {
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
+            .grid.three {
+                grid-template-columns: repeat(3, 1fr);
             }
 
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .links {
+            .grid.two {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (min-width: 980px) {
             .hero-grid {
-                grid-template-columns: 1.05fr 1fr;
-            }
-
-            .cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .gallery {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .gallery .wide {
-                grid-column: span 3;
+                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
@@ -435,36 +392,29 @@
     <section>
         <div class="wrap">
             <h2>What you get</h2>
-            <p class="lead">The original game you remember, rebuilt to run on a modern Mac like any other app.</p>
-            <div class="cards">
+            <div class="grid three">
                 <div class="card">
-                    <div class="icon">🎖</div>
-                    <h3>Campaign and skirmish</h3>
+                    <h3><span class="icon">🎖</span>Campaign and skirmish</h3>
                     <p>Both Zero Hour and the original Generals: story missions, battles against bots and saved games.</p>
                 </div>
                 <div class="card">
-                    <div class="icon">🌐</div>
-                    <h3>Online battles</h3>
+                    <h3><span class="icon">🌐</span>Online battles</h3>
                     <p>Play on the Generals Online service. Games hosted on a Mac are marked, so Mac players find each other easily.</p>
                 </div>
                 <div class="card">
-                    <div class="icon">🧩</div>
-                    <h3>Mods in one click</h3>
+                    <h3><span class="icon">🧩</span>Mods in one click</h3>
                     <p>Popular community mods install and update right from the launcher, each kept separate from the main game.</p>
                 </div>
                 <div class="card">
-                    <div class="icon">⚡</div>
-                    <h3>Made for Apple chips</h3>
+                    <h3><span class="icon">⚡</span>Made for Apple chips</h3>
                     <p>Graphics go straight through Metal, Apple's own technology, with no translation layer in between. The app itself weighs only a few megabytes.</p>
                 </div>
                 <div class="card">
-                    <div class="icon">🎮</div>
-                    <h3>Steam download built in</h3>
+                    <h3><span class="icon">🎮</span>Steam download built in</h3>
                     <p>Sign in with Steam and the launcher fetches the game files for you — no Windows PC needed at any step.</p>
                 </div>
                 <div class="card">
-                    <div class="icon">🆓</div>
-                    <h3>Free and open</h3>
+                    <h3><span class="icon">🆓</span>Free and open</h3>
                     <p>The port costs nothing. Its source code is public and builds on the game code that EA released to the community.</p>
                 </div>
             </div>
@@ -474,11 +424,10 @@
     <section>
         <div class="wrap">
             <h2>What you need</h2>
-            <p class="lead">Three things — and about ten minutes.</p>
-            <ol class="steps">
+            <ol class="steps grid three">
                 <li><b>A Mac with an Apple chip</b> — M1 or newer — and macOS 13 Ventura or later.</li>
-                <li><b>Your own copy of the game.</b> The easiest way is to buy Command &amp; Conquer: Generals — Zero Hour on Steam; the launcher downloads it for you. An old disc or a copy from a Windows PC works too.</li>
-                <li><b>The launcher.</b> Download it and follow the <a href="https://general-online-zh.web.app/">step-by-step guide</a> — it is available in 12 languages, with answers to common questions.</li>
+                <li><b>Your own copy of the game.</b> The easiest way is Command &amp; Conquer: Generals — Zero Hour on Steam; the launcher downloads it for you. An old disc or a copy from a Windows PC works too.</li>
+                <li><b>The launcher.</b> Download it and follow the <a href="https://general-online-zh.web.app/">step-by-step guide</a> — in 12 languages, with answers to common questions.</li>
             </ol>
         </div>
     </section>
@@ -486,23 +435,18 @@
     <section>
         <div class="wrap">
             <h2>Screenshots</h2>
-            <p class="lead">Straight from a Mac — the launcher and the game itself.</p>
-            <div class="gallery">
-                <figure class="wide">
+            <div class="gallery grid three">
+                <figure>
                     <a href="images/shot-03.jpg"><img src="images/shot-03.jpg" width="1600" height="962" loading="lazy" alt="The launcher with a mod installed, the game tabs and camera settings"></a>
-                    <figcaption>The launcher: choose Generals or Zero Hour, install mods, tune the camera.</figcaption>
+                    <figcaption>The launcher: games, mods and settings.</figcaption>
                 </figure>
                 <figure>
-                    <a href="images/shot-01.jpg"><img src="images/shot-01.jpg" width="1600" height="939" loading="lazy" alt="The launcher downloading Generals game files through Steam"></a>
-                    <figcaption>Generals: game files arrive through Steam.</figcaption>
-                </figure>
-                <figure>
-                    <a href="images/shot-02.jpg"><img src="images/shot-02.jpg" width="1600" height="937" loading="lazy" alt="The launcher downloading Zero Hour game files through Steam"></a>
-                    <figcaption>Zero Hour: the same, in one click.</figcaption>
+                    <a href="images/shot-01.jpg"><img src="images/shot-01.jpg" width="1600" height="939" loading="lazy" alt="The launcher downloading game files through Steam"></a>
+                    <figcaption>Game files arrive through Steam.</figcaption>
                 </figure>
                 <figure>
                     <a href="images/shot-04.jpg"><img src="images/shot-04.jpg" width="1600" height="962" loading="lazy" alt="The mod info panel with the authors and their links"></a>
-                    <figcaption>Every mod credits its authors and links to their pages.</figcaption>
+                    <figcaption>Every mod credits its authors.</figcaption>
                 </figure>
                 <figure>
                     <a href="images/shot-10.jpg"><img src="images/shot-10.jpg" width="1600" height="952" loading="lazy" alt="Building a GLA base in classic Generals"></a>
@@ -521,31 +465,26 @@
     </section>
 
     <section>
-        <div class="wrap">
-            <div class="notice">
+        <div class="wrap grid two">
+            <div class="panel warning">
                 <h2>Friends on Windows?</h2>
                 <p>Not yet — for now Mac players play online with other Mac players. In Generals every computer calculates the whole battle on its own, and a Mac and a Windows PC round numbers very slightly differently. Within seconds the two players would be watching two different battles.</p>
                 <p>The fix is built and has been tested in hours-long Mac-and-Windows games. It is now being reviewed by the Windows community, because it touches the heart of the game. Follow the progress <a href="https://github.com/TheSuperHackers/GeneralsGameCode/pull/2670">here</a>, or read the <a href="https://general-online-zh.web.app/#faq-crossplay">longer explanation</a>.</p>
             </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="wrap story">
-            <h2>How it started</h2>
-            <p class="lead">A short story behind the port.</p>
-            <p>In early 2026 I wanted something simple: to play Generals online with friends — from my Mac. There was no Mac version, so I decided to build one. I was an app developer, not a game programmer, and the last time I had written C++ was at school.</p>
-            <p>The first month went into getting the game to draw anything at all through Metal. Then came the menus, the sound, the launcher and online play — and one complete restart from scratch along the way, once I understood which road actually leads online.</p>
-            <p>The biggest surprise came last: Macs and Windows PCs do math very slightly differently, and in a strategy game that is enough to split one battle into two. Fixing that grew into a project of its own. It is now shared with the whole Generals community, so that one day everyone can play together, whatever computer they have.</p>
-            <p class="signature">— okji, author of the Mac port</p>
+            <div class="panel">
+                <h2>How it started</h2>
+                <p>In early 2026 I wanted something simple: to play Generals online with friends — from my Mac. There was no Mac version, so I decided to build one. I was an app developer, not a game programmer, and the last time I had written C++ was at school.</p>
+                <p>The first month went into getting the game to draw anything at all through Metal. Then came the menus, the sound, the launcher and online play — and one complete restart from scratch along the way, once I understood which road actually leads online.</p>
+                <p>The biggest surprise came last: Macs and Windows PCs do math very slightly differently, and in a strategy game that is enough to split one battle into two. Fixing that grew into a project of its own, now shared with the whole Generals community, so that one day everyone can play together.</p>
+                <p class="signature">— okji, author of the Mac port</p>
+            </div>
         </div>
     </section>
 
     <section>
         <div class="wrap">
             <h2>Join in</h2>
-            <p class="lead">Find someone to play with, follow the news, or look under the hood.</p>
-            <div class="links">
+            <div class="links grid three">
                 <a href="https://t.me/GeneralsOnlineMacOS"><span class="icon">💬</span><span>Telegram chat<small>Find Mac players and ask questions</small></span></a>
                 <a href="https://discord.gg/Mm3yjnv6V"><span class="icon">🎧</span><span>Discord<small>The same community, on Discord</small></span></a>
                 <a href="https://t.me/GeneralsOnlineMacOSChannel"><span class="icon">📣</span><span>News channel<small>Updates and release notes</small></span></a>
